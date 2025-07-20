@@ -18,11 +18,15 @@ import {
  */
 export const RepoSearch = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('');  
 
-  const { data, isLoading, error } = useSearchReposQuery(query, {
-    skip: !query, // Пропускать запрос, если query пустой
-  });
+  
+
+  const { data, error, isLoading } = useSearchReposQuery(query, {
+      skip: !query
+    }
+  );
+  console.log(error);
 
   const handleSearch = () => { 
     setQuery(searchQuery);

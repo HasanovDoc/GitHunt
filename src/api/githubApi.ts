@@ -10,8 +10,9 @@ export const githubApi = createApi({
   reducerPath: 'githubApi',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.github.com',
-    prepareHeaders: (headers) => {
-      headers.set('Authorization', `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`);
+    prepareHeaders: (headers) => {   
+      const pat = localStorage.getItem('github_pat');
+      headers.set('Authorization', `Bearer ${import.meta.env.VITE_GITHUB_TOKEN || pat}`);
       headers.set('Content-Type', 'application/json');
       return headers;
     },
