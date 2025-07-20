@@ -9,7 +9,6 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-      <div>Hello</div>
       <RepoSearch />
     </ThemeProvider>
     </>

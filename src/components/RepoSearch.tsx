@@ -24,7 +24,7 @@ export const RepoSearch = () => {
     skip: !query, // Пропускать запрос, если query пустой
   });
 
-  const handleSearch = () => {
+  const handleSearch = () => { 
     setQuery(searchQuery);
   };
 

@@ -19,8 +19,8 @@ export const githubApi = createApi({
   endpoints: (builder) => ({
     searchRepos: builder.query<SearchResult, string>({
       /** 
-       * @param {string} query - Поисковый запрос (например, "react").
-       * @returns {Promise<SearchResult>} Ответ GraphQL.
+       * @param {string} query - Поисковый запрос.
+       * @returns {Promise<SearchResult>} Ответ.
        */
       query: (query) => ({
         url: '/graphql',
