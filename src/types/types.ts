@@ -24,5 +24,5 @@ export interface SearchHeaderProps {
   isLoading?: boolean;
   initialValue?: string;
   onThemeToggle: (themeName: ThemeKeys) => void;
-  currentTheme: string;
+  currentTheme: "navy" | "light" | "dark" | undefined;
 }
