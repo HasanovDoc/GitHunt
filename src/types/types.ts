@@ -1,3 +1,5 @@
+import { themes } from '../styles/theme';
+
 /** Тип для ответа GraphQL. */
 export interface SearchResult {
   data?: {
@@ -12,4 +14,15 @@ export interface SearchResult {
     };
   };
   error?: unknown;
+}
+
+type ThemeKeys = keyof typeof themes;
+
+/** Тип для пропсов у input */
+export interface SearchHeaderProps {
+  onSearch: (query: string) => void;
+  isLoading?: boolean;
+  initialValue?: string;
+  onThemeToggle: (themeName: ThemeKeys) => void;
+  currentTheme: string;
 }
